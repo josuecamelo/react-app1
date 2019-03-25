@@ -28,11 +28,19 @@ export default class Events2 extends Component {
   }
 
   render() {
+    const {data} = this.state;
+
     return (
       <div>
         <input type="text" onChange={this.handleChange} name="nome" id="nome" placeholder="Informe Seu Nome" />
         <input type="text" onChange={this.handleChange} name="idade" id="idade" placeholder="Informe Sua Idade" />
         <button onClick={this.insertToData}>Ok!</button>
+
+        <ul>
+          { data.map(item =>(
+            <li key={item}>{item}</li>
+            ))}
+        </ul>
       </div>
     );
   }
